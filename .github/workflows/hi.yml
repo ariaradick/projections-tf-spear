@@ -1,0 +1,17 @@
+name: Say Hi
+run-name: Saying hello
+on: issues
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup julia env
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.11'
+          arch: 'default'
+      - name: execute script
+        run: |
+          julia test_script.jl
