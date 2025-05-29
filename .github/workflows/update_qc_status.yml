@@ -17,6 +17,8 @@ jobs:
           arch: 'default'
       - name: Update the catalog
         run: |
+          julia -e 'import Pkg; Pkg.add("DataFrames")'
+          julia -e 'import Pkg; Pkg.add("CSV")'
           julia update_qc.jl ${{ github.actor }} ${{github.event.issue.body}}
       - name: Create Pull Request
         id: cpr
