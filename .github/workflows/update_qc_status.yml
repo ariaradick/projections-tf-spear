@@ -3,9 +3,10 @@ run-name: Updating QC status
 on:
   issues:
     types:
-      - opened
+      - labeled
 jobs:
   build:
+    if: ${{ github.event.label.name == 'qc update' }}
     runs-on: ubuntu-latest
 
     steps:
