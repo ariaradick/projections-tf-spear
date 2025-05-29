@@ -7,6 +7,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: create new branch
+        uses: peterjgrainger/action-create-branch@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          branch: 'issue-${{ github.event.issue.number }}'
       - name: setup julia env
         uses: julia-actions/setup-julia@v2
         with:
@@ -15,3 +21,8 @@ jobs:
       - name: execute script
         run: |
           julia test_script.jl
+          touch wowzers.txt
+      - name: create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: 'Update catalog from issue #${{ github.event.issue.number }}'
