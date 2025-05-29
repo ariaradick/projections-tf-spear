@@ -40,7 +40,7 @@ function main(x)
     param_dict = body_to_dict(x[2])
 
     update_qc!(df, param_dict, true, username)
-    CSV.write("sp_cat_2.csv", df)
+    CSV.write(catalog_csv, df)
 end
 
 main(ARGS)
