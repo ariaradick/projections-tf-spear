@@ -20,7 +20,7 @@ jobs:
           julia -e 'import Pkg; Pkg.add("CSV"); Pkg.add("DataFrames")'
       - name: Update the catalog
         run: |
-          julia update_qc.jl ${{ github.actor }} '${{github.event.issue.body}}'
+          julia update_qc.jl ${{ github.actor }} ${{ github.event.issue.body }}
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
