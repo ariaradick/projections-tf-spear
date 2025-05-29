@@ -15,11 +15,12 @@ jobs:
         with:
           version: '1.11'
           arch: 'default'
+      - name: Install deps
+        run: |
+          julia -e 'import Pkg; Pkg.add("CSV"); Pkg.add("DataFrames")'
       - name: Update the catalog
         run: |
-          julia -e 'import Pkg; Pkg.add("DataFrames")'
-          julia -e 'import Pkg; Pkg.add("CSV")'
-          julia update_qc.jl ${{ github.actor }} $'${{github.event.issue.body}}'
+          julia update_qc.jl ${{ github.actor }} '${{github.event.issue.body}}'
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
