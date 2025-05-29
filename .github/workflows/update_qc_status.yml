@@ -17,7 +17,7 @@ jobs:
           arch: 'default'
       - name: Install deps
         run: |
-          julia -e 'import Pkg; Pkg.add("CSV"); Pkg.add("DataFrames")'
+          julia -e 'import Pkg; Pkg.add(["CSV", "DataFrames"])'
       - name: Update the catalog
         run: |
           julia update_qc.jl "$AUTHOR" "$ISSUE_BODY"
