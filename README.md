@@ -1,0 +1,29 @@
+# How to make a QA report:
+
+1. Open an issue, the title can be anything.
+2. In the first few lines of the description of the issue include at least one of the following
+   - variable_id: \<insert here, required\>
+   - experiment: \<Hist or SSP585\>
+   - time_range: \<insert here\>
+
+(If you do not include one, the bot will pass qc for all. E.g., if you don't include time_range then all time_ranges will pass. You can also pass qc for multiple time_range by using list notation.)
+
+3. Make a new line and comment on your QA process.
+
+## Example description:
+
+```
+variable_id: slp
+experiment: Hist
+
+I tested slp by ... and made sure there was no missing or corrupt data.
+```
+
+## Example description for a set of time ranges:
+
+```
+variable_id: snow
+time_range: [20410101-20501231, 20110101-20201231, 20510101-20601231, 20310101-20401231]
+
+I tested snow for these time ranges, I will do the rest of the time ranges next week...
+```
