@@ -10,6 +10,8 @@
 
 3. Make a new line and comment on your QA process.
 
+N.B.: It is not possible to pass QC for individual ensemble members at this time. Please make sure all 30 ensemble members pass before reporting.
+
 ## Example description:
 
 ```
