@@ -1,14 +1,13 @@
 # How to make a QA report:
 
-1. Open an issue, the title can be anything.
+1. Open an issue, with a suitable title.
 2. In the first few lines of the description of the issue include at least one of the following
    - variable_id: \<insert here, required\>
    - experiment: \<Hist or SSP585\>
    - time_range: \<insert here\>
-
-(If you do not include one, the bot will pass qc for all. E.g., if you don't include time_range then all time_ranges will pass. You can also pass qc for multiple time_range by using list notation.)
-
 3. Make a new line and comment on your QA process.
+
+(If you do not include one of these parameters, the bot will pass qc for all values. E.g., if you don't include time_range then all time_ranges will pass for the given variable_id and experiment. You can also pass qc for multiple time_range by using list notation.)
 
 N.B.: It is not possible to pass QC for individual ensemble members at this time. Please make sure all 30 ensemble members pass before reporting.
 
