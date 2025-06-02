@@ -26,5 +26,5 @@ I tested slp by ... and made sure there was no missing or corrupt data.
 variable_id: snow
 time_range: [20410101-20501231, 20110101-20201231, 20510101-20601231, 20310101-20401231]
 
-I tested snow for these time ranges, I will check the rest of the time ranges next week.
+I tested snow for these time ranges.
 ```
