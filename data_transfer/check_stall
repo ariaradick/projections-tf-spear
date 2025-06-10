@@ -1,0 +1,27 @@
+#!/bin/bash
+
+FILENAME=$1
+MODTIME="$(date -r $FILENAME +%s)"
+NOW="$(date +%s)"
+DTIME="$(($NOW - $MODTIME))"
+NLINESMAX="$(< $2 wc -l)"
+
+while (($DTIME < 1))
+do
+    if [ $(date +%H) = 19 ]; then
+        NLINES="$(< $FILENAME wc -l )"
+        PERC_COMPLETE="$(( ($NLINES*100) / $NLINESMAX ))"
+        echo "Data transfer is $PERC_COMPLETE% complete.
+        The most recent files are:
+        
+        $(tail -n 5 $FILENAME)" | mail -s "$3 - Data transfer status update" "aria.radick@noaa.gov"
+    fi
+    sleep 1
+    MODTIME="$(date -r $FILENAME +%s)"
+    NOW="$(date +%s)"
+    DTIME="$(($NOW - $MODTIME))"
+done
+
+# killall rsync
+
+tail -n 5 $FILENAME | mail -s "$3 - Data transfer stalled" "aria.radick@noaa.gov"
