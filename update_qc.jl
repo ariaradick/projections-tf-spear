@@ -1,8 +1,8 @@
 using DataFrames
 using CSV
 
-const catalog_csv = "spear_catalog_blue.csv"
-const allowed_keys = ["variable_id", "experiment", "time_range"]
+const catalog_csv = "catalog_blue.csv"
+const allowed_keys = ["variable_id", "experiment_id", "time_range", "member_id"]
 
 function string_to_vector(x)
     strip.(split(strip(x, ['[',']',' ']),','))
@@ -21,10 +21,10 @@ end
 function find_rows(df, columns)
     truths = ones(Bool, size(df)[1])
     for (k,v) in columns
-        if k == "experiment"
+        if k == "experiment_id"
             subtruths = zeros(Bool, size(df)[1])
             for x in v
-                subtruths = (subtruths .| occursin.(x,df[!,:platform]))
+                subtruths = (subtruths .| occursin.(x,df[!,k]))
             end
             truths = (truths .& subtruths)
         else
