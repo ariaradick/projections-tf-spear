@@ -10,9 +10,9 @@ echo "" > $LOGFILE
 (rsync -airv --files-from=$1 /decp/SPEAR_MED /work/Aria.Radick/TFTEST > $LOGFILE)
 
 if [ $? -ne 0 ]; then
-    pkill -f "check_complete"
+    pkill -f "check_stall"
     tail -n 5 $LOGFILE | mail -s "$LISTNAME - Data transfer error" "aria.radick@noaa.gov"
 else
-    pkill -f "check_complete"
+    pkill -f "check_stall"
     tail -n 2 $LOGFILE | mail -s "$LISTNAME - Data transfer complete!" "aria.radick@noaa.gov"
 fi
