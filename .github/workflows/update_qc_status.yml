@@ -1,0 +1,43 @@
+name: Update QC Status
+run-name: Updating QC status
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'qc update' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup julia env
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.11'
+          arch: 'default'
+      - name: Install deps
+        run: |
+          julia -e 'import Pkg; Pkg.add(["CSV", "DataFrames"])'
+      - name: Update the catalog
+        run: |
+          julia update_qc.jl "$AUTHOR" "$ISSUE_BODY"
+        env:
+          AUTHOR: ${{ github.actor }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: Update qc for ${{github.event.issue.number}}
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: issue-${{github.event.issue.number}}
+          delete-branch: true
+          title: 'Update QC status for #${{github.event.issue.number}}'
+          body: |
+            Auto-generated
+          assignees: ariaradick
+          reviewers: ariaradick
+          draft: false
