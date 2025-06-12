@@ -5,7 +5,7 @@ labels: ["qc update"]
 body:
   - type: markdown
     attributes:
-      value: "# Please enter some information about the datasets that were checked:"
+      value: "## Please enter some information about the datasets that were checked:"
   - type: input
     id: variable_id
     attributes:
