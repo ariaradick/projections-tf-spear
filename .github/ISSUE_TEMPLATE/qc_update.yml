@@ -21,7 +21,6 @@ body:
       options:
         - Historical
         - SSP585
-      default: 0
     validations:
       required: true
   - type: input
@@ -36,6 +35,5 @@ body:
       options:
         - "Yes"
         - "No"
-      default: 0
     validations:
       required: true
