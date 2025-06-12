@@ -5,7 +5,6 @@ DRYLOG="$(echo $LISTNAME)_log_dry_$(date +"%Y-%m-%dT%H:%M").txt"
 LOGFILE="$(echo $LISTNAME)_log_$(date +"%Y-%m-%dT%H:%M").txt"
 
 rsync -airnv --files-from=$1 /decp/SPEAR_MED /work/Aria.Radick/TFTEST > $DRYLOG
-touch $LOGFILE
 echo "" > $LOGFILE
 (bash check_stall $LOGFILE $DRYLOG $LISTNAME) &
 (rsync -airv --files-from=$1 /decp/SPEAR_MED /work/Aria.Radick/TFTEST > $LOGFILE)
