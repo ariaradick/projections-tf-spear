@@ -3,7 +3,7 @@
 1. Open an issue, with a suitable title.
 2. In the first few lines of the description of the issue include at least one of the following
    - variable_id: \<insert here, required\>
-   - experiment: \<Hist or SSP585\>
+   - experiment_id: \<Hist or SSP585\>
    - time_range: \<insert here\>
 3. Make a new line and comment on your QA process.
 
@@ -15,7 +15,7 @@ N.B.: It is not possible to pass QC for individual ensemble members at this time
 
 ```
 variable_id: slp
-experiment: Hist
+experiment_id: Hist
 
 I tested slp by ... and made sure there was no missing or corrupt data.
 ```
