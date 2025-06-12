@@ -23,5 +23,6 @@ do
 done
 
 # killall rsync
+# if this is run in a slurm job, then scancel the jobid
 
 tail -n 5 $FILENAME | mail -s "$3 - Data transfer stalled" "aria.radick@noaa.gov"
