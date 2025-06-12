@@ -37,3 +37,9 @@ body:
         - "No"
     validations:
       required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Explain the steps taken to ensure quality assurance:
+    validations:
+      required: true
