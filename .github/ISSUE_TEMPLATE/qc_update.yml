@@ -4,8 +4,8 @@ title: "[QC]: "
 labels: ["qc update"]
 body:
   - type: markdown
-    attributes: |
-      Please enter some information about the datasets that were checked:
+    attributes:
+      value: "Please enter some information about the datasets that were checked:"
   - type: input
     id: variable_id
     attributes:
@@ -34,8 +34,8 @@ body:
     attributes:
       label: Do the datasets pass the quality assurance checks?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
       default: 0
     validations:
       required: true
