@@ -40,6 +40,6 @@ body:
   - type: textarea
     id: explanation
     attributes:
-      label: Explain the steps taken to ensure quality assurance:
+      label: "Explain the steps taken to ensure quality assurance:"
     validations:
       required: true
