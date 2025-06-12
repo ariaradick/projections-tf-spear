@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# projections-tf-spear
-=======
 # How to make a QA report:
 
 1. Open an issue, with a suitable title.
@@ -31,4 +28,3 @@ time_range: [20410101-20501231, 20110101-20201231, 20510101-20601231, 20310101-2
 
 I tested snow for these time ranges.
 ```
->>>>>>> projections-tf-spear-test/main
