@@ -6,6 +6,7 @@
    - experiment_id: \<Hist or SSP585\>
    - time_range: \<insert here\>
 3. Make a new line and comment on your QA process.
+4. Add the label "qc update" to your issue.
 
 (If you do not include one of these parameters, the bot will pass qc for all values. E.g., if you don't include time_range then all time_ranges will pass for the given variable_id and experiment. You can also pass qc for multiple time_range by using list notation.)
 
