@@ -2,6 +2,21 @@
   "esmcat_version": "0.0.1",
   "attributes": [
     {
+      "column_name": "activity_id",
+      "vocabulary": "",
+      "required": false
+    },
+    {
+      "column_name": "institution_id",
+      "vocabulary": "",
+      "required": false
+    },
+    {
+      "column_name": "source_id",
+      "vocabulary": "",
+      "required": false
+    },
+    {
       "column_name": "experiment_id",
       "vocabulary": "",
       "required": true
@@ -17,7 +32,17 @@
       "required": true
     },
     {
+      "column_name": "table_id",
+      "vocabulary": "",
+      "required": false
+    },
+    {
       "column_name": "member_id",
+      "vocabulary": "",
+      "required": false
+    },
+    {
+      "column_name": "grid_label",
       "vocabulary": "",
       "required": false
     },
@@ -36,13 +61,34 @@
       "required": false
     },
     {
-      "column_name": "cell_methods",
+      "column_name": "platform",
+      "vocabulary": "",
       "required": false
+    },
+    {
+      "column_name": "target",
+      "vocabulary": "",
+      "required": false
+    },
+    {
+      "column_name": "cell_methods",
+      "vocabulary": "",
+      "required": "enhanced"
     },
     {
       "column_name": "path",
       "vocabulary": "",
       "required": true
+    },
+    {
+      "column_name": "dimensions",
+      "vocabulary": "",
+      "required": "enhanced"
+    },
+    {
+      "column_name": "version_id",
+      "vocabulary": "",
+      "required": false
     },
     {
       "column_name": "standard_name",
@@ -66,8 +112,11 @@
   "aggregation_control": {
     "variable_column_name": "variable_id",
     "groupby_attrs": [
+      "source_id",
       "experiment_id",
       "frequency",
+      "table_id",
+      "grid_label",
       "realm",
       "member_id",
       "chunk_freq",
