@@ -26,8 +26,10 @@ function parse_body(input_string, cat_df)
     elseif y[2] == "SSP585"
         var_dict[:experiment_id] = ["SPEAR_c192_o1_Scen_SSP585_IC2011_K50"]
     end
+    truths = (cat_df[!,:variable_id] .== var_dict[:variable_id]) .& 
+             (cat_df[!,:experiment_id] .== var_dict[:experiment_id])
 
-    allowed_times = unique(cat_df[(cat_df[!,:variable_id] .== y[1]),:time_range])
+    allowed_times = unique(cat_df[truths,:time_range])
 
     if (y[3] ≠ "_No response_")
         time_ranges = string_to_vector(y[3])
