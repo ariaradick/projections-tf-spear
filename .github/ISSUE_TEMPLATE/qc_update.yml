@@ -29,8 +29,8 @@ body:
     id: time_range
     attributes:
       label: Time Range
-      description: Enter the time range that was checked. Enter multiple with commas separating them or leave blank to report for all time ranges.
-      placeholder: Leave blank to select all...
+      description: Leave blank to select all time ranges. Enter multiple with commas separating them.
+      placeholder: Leave blank to select all
   - type: dropdown
     id: pass_qc
     attributes:
