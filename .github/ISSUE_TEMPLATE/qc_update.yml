@@ -17,8 +17,9 @@ body:
     id: experiment_id
     attributes:
       label: Experiment
-      description: Are the checked datasets from historical or SSP585?
+      description: Which experiment do the checked datasets correspond to?
       options:
+        - All
         - Historical
         - SSP585
       default: 0
@@ -33,10 +34,11 @@ body:
   - type: dropdown
     id: pass_qc
     attributes:
-      label: Do the datasets pass the quality assurance checks?
+      label: "Do the datasets pass the quality assurance checks?" 
+      description: "If they do not pass, please explain below."
       options:
-        - "Yes"
         - "No"
+        - "Yes"
       default: 0
     validations:
       required: true
